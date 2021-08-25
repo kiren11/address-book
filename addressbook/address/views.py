@@ -18,3 +18,8 @@ def addContact(request):
       new_contact.save()
       return redirect('/')
    return render(request, 'new-contact.html')
+
+# get contact info based on id (pk)
+def contactProfile(request, pk):
+   contact = Contact.objects.get(id=pk)
+   return render(request, 'contact-name.html', {'contact': contact})
