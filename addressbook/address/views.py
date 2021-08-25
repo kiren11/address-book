@@ -8,11 +8,11 @@ def index(request):
 def addContact(request):
    if request.method == "POST":
       new_contact = Contact(
-         first_name = request.POST['firstname'],
-         last_name = request.POST['lastname'],
-         phoen_number = request.POST['phonenumber'],
-         email_address = request.POST['emailaddress'],
-         street_address = request.POST['streetaddress']
+         firstName = request.POST['firstname'],
+         lastName = request.POST['lastname'],
+         phoneNumber = request.POST['phonenumber'],
+         emailAddress = request.POST['emailaddress'],
+         streetAddress = request.POST['streetaddress']
       )
       new_contact.save()
       return redirect('/')
