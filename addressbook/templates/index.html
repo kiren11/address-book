@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+{% load static %}
+
 <html>
    <head>
       <meta charset="utf-8">
@@ -7,9 +9,24 @@
       <title>Address Book</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="shortcut icon" href="#">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="{% static 'style.css' %}">
    </head>
    <body>
-      test
+
+      <div id ="topHeader">
+
+         <h2> Address Book </h2>
+
+         <!-- search bar -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+         <form action="action_page.php">
+         <input type="text" placeholder="Search Contacts" name="search">
+         <button type="submit"><i class="fa fa-search"></i></button>
+         </form> 
+
+         <a href="{% url 'add-contact' %}" class="button"> + New Contact </a>
+
+      </div>
    </body>
 </html>

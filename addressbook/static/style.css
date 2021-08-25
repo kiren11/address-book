@@ -1,0 +1,67 @@
+body {
+   font-family: Arial;
+ }
+ 
+ * {
+   box-sizing: border-box;
+ }
+ 
+h2 {
+   font-family: Arial, Helvetica, sans-serif;
+   text-align: left;
+   margin: 0px;
+}
+
+#topHeader {
+   display: flex;
+   justify-content: space-between;
+ }
+
+ /* search button  */
+ form.example input[type=text] {
+
+   font-size: 17px;
+   border: 1px solid grey;
+   float: right;
+   width: 80%;
+   background: #f1f1f1;
+ }
+ 
+ form.example button {
+   float: right;
+   width: 40%;
+   height: 25px;
+   padding: 20px;
+   background: #2196F3;
+   color: white;
+   font-size: 20px;
+   border: 1px solid grey;
+   border-left: none;
+   cursor: pointer;
+ }
+ 
+ form.example button:hover {
+   background: #0b7dda;
+ }
+ 
+ form.example::after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+
+ /* create new contact button */
+ a.button {
+   -webkit-appearance: button;
+   -moz-appearance: button;
+   appearance: button;
+   color: white;
+   text-decoration: none;
+   border: none;
+   text-align: center;
+   font-size: 16px;
+   padding: 10px 25px;
+   display: inline-block;
+   background-color: rgb(252, 160, 255);
+}
+
