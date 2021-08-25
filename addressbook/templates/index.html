@@ -19,7 +19,6 @@
 
          <!-- search bar -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
          <form action="action_page.php">
          <input type="text" placeholder="Search Contacts" name="search">
          <button type="submit"><i class="fa fa-search"></i></button>
@@ -27,6 +26,22 @@
 
          <a href="{% url 'add-contact' %}" class="button"> + New Contact </a>
 
+      </div>
+
+      <div id = "allContacts">
+         <ul class = "address-book">
+            {% for contact in contacts %}
+            <div>
+               <li>
+                  <p class="contact-name">{{ contact.firstName | title }}</p>
+                  <p class="contact-name">{{ contact.lastName | title }}</p>
+                  <p class="contact-name">{{ contact.phoneNumber | title }}</p>
+                  <p class="contact-name">{{ contact.emailAddress | title }}</p>
+                  <p class="contact-name">{{ contact.streetAddress | title }}</p>
+
+               </li>
+            {% endfor %}
+         </ul>
       </div>
    </body>
 </html>
