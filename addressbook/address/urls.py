@@ -9,7 +9,7 @@ from . import views
 urlpatterns = [
    url(r'^login/$', LoginView.as_view(), name='login'),
    url(r'^logout/$', LogoutView.as_view(), name='logout'),
-   # path("register", views.register_request, name="register"),
+   # path('register/', views.register, name='register'),    
    path('', views.index, name='index'),
    path('add-contact/', views.addContact, name='add-contact'),
    path('profile/<str:pk>', views.contactProfile, name='profile'),

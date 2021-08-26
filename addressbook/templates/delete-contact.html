@@ -11,20 +11,28 @@
    </head>
    <body>
 
-   <a href="{% url 'profile' contact.id %}" class="button"> Back </a>
-
-   <div id = "header">
-      <h1 class="contact-name">{{ contact.firstName | title }}</h1>
-      <h1 class="contact-name">{{ contact.lastName | title }}</h1>
+   <div class ="topHeader">
+      <h1> Address Book </h1>
+      <a href="{% url 'profile' contact.id %}" class="button"> Back </a>
    </div>
 
-   <p> Would you like to delete this contact? </p>
+
+   <div class="loginForm">
+      <div class="innerText">
+         <div id = "header">
+            <h1 class="contact-name">{{ contact.firstName | title }}</h1>
+            <h1 class="contact-name">{{ contact.lastName | title }}</h1>
+         </div>
+
+         <p> Would you like to delete this contact? </p>
    
-   <form method='POST'>
-      {% csrf_token %}
-      <div class="delete-contact">
-         <input class="delete-button" type="submit" value='Delete Contact' />
+         <form method='POST'>
+            {% csrf_token %}
+            <div class="delete-contact">
+               <button> <input class="delete-button" type="submit" value='Delete Contact' /> </button>
+            </div>
+         </form>
       </div>
-   </form>
-   </body>
+   </div>
+</body>
 </html>

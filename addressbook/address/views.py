@@ -31,7 +31,8 @@ def addContact(request):
          phoneNumber = request.POST['phonenumber'],
          emailAddress = request.POST['emailaddress'],
          streetAddress = request.POST['streetaddress']
-      )
+      ) 
+      
       new_contact.save()
       return redirect('/')
    return render(request, 'new-contact.html')

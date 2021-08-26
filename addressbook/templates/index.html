@@ -42,11 +42,10 @@
                   <p class="contactBox">{{ contact.firstName | title }} {{ contact.lastName | title }}  
                   <br>
                   {{ contact.streetAddress}} </p>
-               </li>
             
             <!-- if no contacts present, display message -->
             {% empty %}
-				<h3 style="color:#fff;padding:20px;"> No contacts, click button "Add Contact" to add! </h3>
+				<h3 style="color:black; text-align:center;"> No contacts, click button "Add Contact" to add! </h3>
 
             {% endfor %}
          </ul>
