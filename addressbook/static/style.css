@@ -87,18 +87,14 @@ form.example::after {
 
 .contactContainer {
    display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-   grid-gap: 1rem;
-   grid-auto-flow: row dense;
-   grid-auto-columns: 300px 100px;
-   
+   grid-auto-flow: repeat(3, 1fr);
 }
 
 .contactBox {
    background-color: #ffbf69;
    text-align: left;
-   height: 250px;
-   line-height: 125px;
+   height: 150px;
+   line-height: 75px;
    text-align: center;
 }
 

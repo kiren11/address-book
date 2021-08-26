@@ -39,9 +39,9 @@
                <a href="{% url 'profile' contact.id %}" style="text-decoration: none;">
             
                <li>
-                  <p class="contactBox">{{ contact.firstName | title }} {{ contact.lastName | title }}  
+                  <b> <p class="contactBox">{{ contact.firstName | title }} {{ contact.lastName | title }}  
                   <br>
-                  {{ contact.streetAddress}} </p>
+                  {{ contact.streetAddress}} </p> </b>
             
             <!-- if no contacts present, display message -->
             {% empty %}
