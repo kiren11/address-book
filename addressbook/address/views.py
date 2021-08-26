@@ -23,3 +23,16 @@ def addContact(request):
 def contactProfile(request, pk):
    contact = Contact.objects.get(id=pk)
    return render(request, 'contact-name.html', {'contact': contact})
+
+def editContact(request, pk):
+   contact = Contact.objects.get(id=pk)
+   
+   if request.method == 'POST':
+      contact.firstName = request.POST['firstname']
+      contact.lastName = request.POST['lastname']
+      contact.phoneNumber = request.POST['phonenumber']
+      contact.emailAddress = request.POST['emailaddress']
+      contact.streetAddress = request.POST['streetaddress']
+      contact.save()
+      return redirect('/profile/'+str(contact.id))
+   return render(request, 'edit-contact.html', {'contact': contact})

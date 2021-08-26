@@ -17,5 +17,7 @@
          <p class="contact-name">{{ contact.emailAddress | title }}</p>
          <p class="contact-name">{{ contact.streetAddress | title }}</p>
       </div>
+
+      <a href= "{% url 'edit-contact' contact.id %}"> Update Profile </a>
    </body>
 </html>
