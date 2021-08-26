@@ -48,7 +48,14 @@
 						value="{{ contact.streetAddress | title }}">
          </li>
          </ul>
+
+         <!-- button to update contact info -->
          <input type="submit" value="Update Contact"/>
+
+         <!-- button to delete contact info -->
+         <a href = "{% url 'delete' contact.id %}"> 
+            <button class = "button"> Delete Contact </button>
+         </a>
       </form>
    </body>
 </html>

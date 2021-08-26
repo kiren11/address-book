@@ -6,39 +6,36 @@
    <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>Address Book</title>
+      <title> Address Book </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="shortcut icon" href="#">
       <link rel="stylesheet" href="{% static 'style.css' %}">
    </head>
+
    <body>
-
-      <div id ="topHeader">
-
-         <h2> Address Book </h2>
+      <div class ="topHeader">
+         <h1> Address Book </h1>
 
          <!-- search bar -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          <form action="action_page.php">
-         <input type="text" placeholder="Search Contacts" name="search">
-         <button type="submit"><i class="fa fa-search"></i></button>
+            <input type="text" placeholder="Search Contacts" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
          </form> 
 
          <a href="{% url 'add-contact' %}" class="button"> + New Contact </a>
 
       </div>
 
-      <div id = "allContacts">
+      <div class = "allContacts">
          <ul class = "address-book">
+            <div class = "contactContainer">
             {% for contact in contacts %}
-            <div>
+            
                <li>
-                  <p class="contact-name">{{ contact.firstName | title }}</p>
-                  <p class="contact-name">{{ contact.lastName | title }}</p>
-                  <p class="contact-name">{{ contact.phoneNumber | title }}</p>
-                  <p class="contact-name">{{ contact.emailAddress | title }}</p>
-                  <p class="contact-name">{{ contact.streetAddress | title }}</p>
-
+                  <p class="contactBox">{{ contact.firstName | title }} {{ contact.lastName | title }}  
+                  <br>
+                  {{ contact.streetAddress}} </p>
                </li>
             {% endfor %}
          </ul>
