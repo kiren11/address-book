@@ -6,18 +6,29 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <title>Address Book</title>
       <link rel="shortcut icon" href="#">
-      <link rel="stylesheet" href="{% static 'style-profile.css' %}%">
+      <link rel="stylesheet" href="{% static 'style-edit.css' %}">
    </head>
    
    <body>
-      <div>
-         <p class="contact-name">{{ contact.firstName | title }}</p>
-         <p class="contact-name">{{ contact.lastName | title }}</p>
-         <p class="contact-name">{{ contact.phoneNumber | title }}</p>
-         <p class="contact-name">{{ contact.emailAddress | title }}</p>
-         <p class="contact-name">{{ contact.streetAddress | title }}</p>
-      </div>
 
-      <a href= "{% url 'edit-contact' contact.id %}"> Update Profile </a>
+   <div class ="topHeader">
+      <h1> Address Book </h1>
+      <a href="{% url 'profile' contact.id %}" class="button"> Back </a>
+   </div>
+
+   <div class="loginForm">
+      <div class="innerText">
+         <div>
+            <p class="contact-name">{{ contact.firstName | title }}</p>
+            <p class="contact-name">{{ contact.lastName | title }}</p>
+            <p class="contact-name">{{ contact.phoneNumber | title }}</p>
+            <p class="contact-name">{{ contact.emailAddress | title }}</p>
+            <p class="contact-name">{{ contact.streetAddress | title }}</p>
+         </div>
+
+      <a href= "{% url 'edit-contact' contact.id %}"> <button> Update Profile </button> </a>
+
+    </div>
+   </div>
    </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title> Address Book </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="#">
+      <link rel="stylesheet" href="{% static 'register.css' %}">
+   </head>
+
+   <body>
+
+   <h1> Register </h1>
+
+   <form method = "POST" class="form-group" action="">
+      {{form}}
+      <button type="submit" class="btn btn-success"> Register </button>
+   </form>
+   </body>
+</html>

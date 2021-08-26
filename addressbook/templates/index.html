@@ -18,25 +18,37 @@
 
          <!-- search bar -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-         <form action="action_page.php">
-            <input type="text" placeholder="Search Contacts" name="search">
+         <form action="/" method="GET" class="search" name = "search">
+            <input type="search-name" placeholder="Search Contacts" name="search" value="{{searchQuery}}">
+            <i onclick="document.getElementById('search-form').submit();" style="padding-left: 5px;"
+					class="fa fa-search"></i>
             <button type="submit"><i class="fa fa-search"></i></button>
+
          </form> 
 
          <a href="{% url 'add-contact' %}" class="button"> + New Contact </a>
 
       </div>
 
+      <div class = "message"> Click on any box to view contact info, update and delete. </div>
+      
       <div class = "allContacts">
          <ul class = "address-book">
             <div class = "contactContainer">
             {% for contact in contacts %}
+
+               <a href="{% url 'profile' contact.id %}" style="text-decoration: none;">
             
                <li>
                   <p class="contactBox">{{ contact.firstName | title }} {{ contact.lastName | title }}  
                   <br>
                   {{ contact.streetAddress}} </p>
                </li>
+            
+            <!-- if no contacts present, display message -->
+            {% empty %}
+				<h3 style="color:#fff;padding:20px;"> No contacts, click button "Add Contact" to add! </h3>
+
             {% endfor %}
          </ul>
       </div>

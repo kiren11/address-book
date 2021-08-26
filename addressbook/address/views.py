@@ -1,10 +1,34 @@
 from django.shortcuts import render, redirect
 from .models import Contact
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 
-# Create your views here.
+def login(request):
+   return render(request, 'login.html')
+ 
+def register_request(request):
+	if request.method == "POST":
+		form = NewUserForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("main:homepage")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewUserForm()
+	return render (request=request, template_name="main/register.html", context={"register_form":form})
+
 def index(request):
    contacts = Contact.objects.all()
-   return render(request, 'index.html', {'contacts':contacts})
+   searchQuery = request.GET.get('searchbar')
+   if searchQuery:
+      contacts = Contact.objects.filter(firstName__icontains=searchQuery)
+   elif searchQuery:
+      contacts = Contact.objects.filter(lastName_icontains=searchQuery)
+   else:
+      contacts = Contact.objects.all()
+      searchQuery = ''
+   return render(request, 'index.html', {'contacts':contacts, 'searchQuery': searchQuery})
 
 def addContact(request):
    if request.method == "POST":

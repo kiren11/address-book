@@ -4,7 +4,6 @@ body {
  
 * {
    box-sizing: border-box;
-   list-style: none;
 }
 
 .topHeader {
@@ -24,10 +23,6 @@ h2 {
    text-align: center;
    margin-top: 5px;
    font-size: 35px;
-}
-
-.header {
-   text-align: center;
 }
 
 a.button {
@@ -57,7 +52,7 @@ a.button {
    bottom: 0;
    left: 0;
    width: 500px;
-   height: 350px;
+   height: 275px;
    background-color: #cbf3f0;
 }
 
@@ -65,11 +60,6 @@ input {
    font-family: "Helvetica Neue", Helvetica, sans-serif;
    font-size: 12px;
    outline: none;
-}
-
-a {
-   text-decoration: none;
-   color: inherit;
 }
 
 input[type=text],
@@ -93,29 +83,6 @@ button {
    padding: 1px 10px;
    display: inline-block;
    background-color: #2ec4b6;
-}
-
-input[type=text],
-input[type=tel],
-input[type=email] {
-    color: #777;
-    padding-left: 10px;
-    margin: 10px;
-    margin-top: 12px;
-    margin-left: 18px;
-    width: 290px;
-    height: 35px;
-}
-
-input[type=submit] {
-   text-decoration: none;
-   background-color: #2ec4b6;
-   background: transparent;
-   box-shadow: 0px 0px 0px transparent;
-   border: 0px solid transparent;
-   text-shadow: 0px 0px 0px transparent;
-   color: white;
-   font-size: 15px;
 }
 
 
