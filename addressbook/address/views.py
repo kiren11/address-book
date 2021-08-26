@@ -1,15 +1,14 @@
 from django.shortcuts import render, redirect
 from .models import Contact
 from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import  render, redirect
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
 
 def login(request):
    return render(request, 'login.html')
- 
-def register(request):
-    form = UserCreationForm()
-    return render(request,'register.html', {'form': form})
+
+def logout(request):
+   return render(request, 'login.html')
 
 def index(request):
    contacts = Contact.objects.all()
@@ -21,6 +20,7 @@ def index(request):
    else:
       contacts = Contact.objects.all()
       searchQuery = ''
+      html = 'No contacts found!'
    return render(request, 'index.html', {'contacts':contacts, 'searchQuery': searchQuery})
 
 def addContact(request):
@@ -35,11 +35,6 @@ def addContact(request):
       new_contact.save()
       return redirect('/')
    return render(request, 'new-contact.html')
-
-# get contact info based on id (pk)
-def contactProfile(request, pk):
-   contact = Contact.objects.get(id=pk)
-   return render(request, 'contact-name.html', {'contact': contact})
 
 def editContact(request, pk):
    contact = Contact.objects.get(id=pk)
@@ -60,3 +55,8 @@ def deleteContact(request, pk):
       contact.delete()
       return redirect('/')
    return render(request, 'delete-contact.html', {'contact': contact})
+
+# get contact info based on id (pk)
+def contactProfile(request, pk):
+   contact = Contact.objects.get(id=pk)
+   return render(request, 'contact-name.html', {'contact': contact})

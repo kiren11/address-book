@@ -19,9 +19,8 @@
          <!-- search bar -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
          <form action="/" method="GET" class="search">
-            <input type="search-name" placeholder="Search Contacts" name="search-area" value="{{searchQuery}}">
-            <i onclick="document.getElementById('search-form').submit();" style="padding-left: 5px;"
-					class="fa fa-search"></i>
+            <input type="search-name" placeholder="Search Contacts" name="search-area" value="{{searchQuery}}" class = "searchBar">
+            
             <button type="submit"><i class="fa fa-search"></i></button>
 
          </form> 
@@ -51,6 +50,10 @@
 
             {% endfor %}
          </ul>
+      </div>
+
+      <div>
+         <a href="{% url 'logout' %}" class="button" id = "logoutButton"> Logout </a>
       </div>
    </body>
 </html>
