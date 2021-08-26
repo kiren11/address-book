@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="{% static 'style-delete.css'%}">
+   </head>
+   <body>
+
+   <a href="{% url 'profile' contact.id %}" class="button"> Back </a>
+
+   <div id = "header">
+      <h1 class="contact-name">{{ contact.firstName | title }}</h1>
+      <h1 class="contact-name">{{ contact.lastName | title }}</h1>
+   </div>
+
+   <p> Would you like to delete this contact? </p>
+   
+   <form method='POST'>
+      {% csrf_token %}
+      <div class="delete-contact">
+         <input class="delete-button" type="submit" value='Delete Contact' />
+      </div>
+   </form>
+   </body>
+</html>
